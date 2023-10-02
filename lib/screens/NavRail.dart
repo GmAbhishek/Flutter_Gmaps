@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_in_flutter/screens/menu.dart';
+
+import 'gmaps.dart';
 
 /// Flutter code sample for [NavigationRail].
 
@@ -39,26 +42,12 @@ class _NavRailExampleState extends State<NavRailExample> {
             onDestinationSelected: (int index) {
               setState(() {
                 _selectedIndex = index;
+                  Navigator.push(
+                      context,MaterialPageRoute(builder: (context) => HamburgerMenu()));
               });
             },
             labelType: labelType,
-            leading: showLeading
-                ? FloatingActionButton(
-              elevation: 0,
-              onPressed: () {
-                // Add your onPressed code here!
-              },
-              child: const Icon(Icons.add),
-            )
-                : const SizedBox(),
-            trailing: showTrailing
-                ? IconButton(
-              onPressed: () {
-                // Add your onPressed code here!
-              },
-              icon: const Icon(Icons.more_horiz_rounded),
-            )
-                : const SizedBox(),
+
             destinations: const <NavigationRailDestination>[
               NavigationRailDestination(
                 icon: Icon(Icons.favorite_border),
@@ -69,6 +58,7 @@ class _NavRailExampleState extends State<NavRailExample> {
                 icon: Icon(Icons.bookmark_border),
                 selectedIcon: Icon(Icons.book),
                 label: Text('Second'),
+
               ),
 
             ],
@@ -76,9 +66,9 @@ class _NavRailExampleState extends State<NavRailExample> {
           const VerticalDivider(thickness: 1, width: 1),
           // This is the main content.
           Expanded(
-            child: Column(
+            child: MapsPage(),
 
-            ),
+
           ),
         ],
       ),
