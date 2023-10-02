@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'screens/locations.dart' as locations;
+import 'screens/NavRail.dart';
+import 'screens/menu.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const DrawerMenuBar());
 }
 
 class MyApp extends StatefulWidget {

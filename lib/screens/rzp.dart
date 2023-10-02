@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class RzpApp extends StatefulWidget {
+  const RzpApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyState();
+  State<RzpApp> createState() => _MyState();
 }
 
-class _MyState extends State<MyApp> {
+class _MyState extends State<RzpApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(home: Home());
