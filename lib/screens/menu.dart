@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_in_flutter/screens/NavRail.dart';
 
+import 'gmaps.dart';
+
 class DrawerMenuBar extends StatelessWidget {
   const DrawerMenuBar({super.key});
 
@@ -20,6 +22,7 @@ class HamburgerMenu extends StatefulWidget {
 }
 
 class _HamburgerMenuState extends State<HamburgerMenu> {
+  final MapsPage _mapsPage = MapsPage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,9 +81,7 @@ class _HamburgerMenuState extends State<HamburgerMenu> {
           ListTile(
             onTap: ()
             {
-              Navigator.push(
-                  context,MaterialPageRoute(builder: (context) => const NavRailExample())
-              );
+                MapsPage();
             },
             leading: const Icon(
               Icons.location_on,
@@ -103,7 +104,7 @@ class _HamburgerMenuState extends State<HamburgerMenu> {
               style: TextStyle(fontSize: 24, color: Colors.black),
             ),
           ),
-          const ListTile(
+           ListTile(
             leading: Icon(
               Icons.settings,
               size: 28,
@@ -116,7 +117,9 @@ class _HamburgerMenuState extends State<HamburgerMenu> {
           ),
         ],
       )),
-      body: Container(),
+      body: Container(
+child: MapsPage(),
+      ),
     );
   }
 }
